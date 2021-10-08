@@ -55,6 +55,22 @@ const pacientes = new Array(
   }
 );
 
-function informacion() {
-  return {};
-}
+const total = function (pacientes) {
+  return {
+    nPacientes: pacientes.length,
+
+    nMayoresEdad: pacientes.filter((persona) => persona.paciente.edad > 17)
+      .length,
+
+    nHombresDiabeticos: pacientes.filter(
+      ((persona) => persona.dieta === "Diabetes") &&
+        ((persona) => persona.paciente.sexo === "H")
+    ).length,
+
+    totalDiasIngreso: pacientes.reduce(function sumar(antes, despues) {
+      return antes + despues.diasIngresado;
+    }, 0),
+  };
+};
+
+console.log(total(pacientes));
