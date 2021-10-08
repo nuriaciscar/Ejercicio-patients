@@ -54,3 +54,7 @@ const pacientes = new Array(
     dieta: "Sin sal",
   }
 );
+
+function informacion() {
+  return {};
+}
